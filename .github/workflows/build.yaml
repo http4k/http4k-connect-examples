@@ -10,6 +10,6 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: 11
+      - run: pushd connect-pattern && ./gradlew test && popd
+      - run: pushd custom-adapter-and-fake && ./gradlew test && popd
       - run: pushd using-connect-adapters && ./gradlew test && popd
-      - run: pushd custom-adapter && ./gradlew test && popd
-      - run: pushd custom-adapter-with-codegen && ./gradlew test && popd
