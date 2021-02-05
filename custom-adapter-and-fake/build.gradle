@@ -24,7 +24,11 @@ test {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation platform("org.http4k:http4k-connect-bom:$http4k_connect_version")
+
+    // this is required for implementing your own adapter
     implementation "org.http4k:http4k-connect-core"
+
+    // needed by out custom adapter, but optional if you aren't going to use it!
     implementation "org.http4k:http4k-format-moshi"
 
     // this and the plugin are only required for generating custom action extension functions (if you want to)
@@ -33,10 +37,10 @@ dependencies {
     testImplementation platform("org.junit:junit-bom:$junit_version")
     testImplementation "org.junit.jupiter:junit-jupiter-api"
     testImplementation "org.junit.jupiter:junit-jupiter-engine"
-
     testImplementation "org.http4k:http4k-testing-hamkrest"
     testImplementation "io.mockk:mockk:$mockk_version"
 
+    // these are required for implementing your own fake
     testImplementation "org.http4k:http4k-connect-core-fake"
     testImplementation "org.http4k:http4k-connect-storage-core"
 

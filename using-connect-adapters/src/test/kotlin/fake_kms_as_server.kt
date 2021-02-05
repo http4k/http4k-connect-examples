@@ -11,7 +11,7 @@ import org.http4k.connect.amazon.model.Region
 import org.http4k.core.Status
 import org.http4k.core.Uri
 import org.http4k.core.then
-import org.http4k.filter.ClientFilters
+import org.http4k.filter.ClientFilters.SetBaseUriFrom
 import org.http4k.server.SunHttp
 import org.http4k.server.asServer
 
@@ -23,7 +23,7 @@ fun main() {
     val fakeKMS = FakeKMS()
     val fakeKmsServer = fakeKMS.asServer(SunHttp(8000)).start()
 
-    val http = ClientFilters.SetBaseUriFrom(Uri.of("http://localhost:8000")).then(JavaHttpClient())
+    val http = SetBaseUriFrom(Uri.of("http://localhost:8000")).then(JavaHttpClient())
     val kms = KMS.Http(Region.of("us-east-1"), { AwsCredentials("access-key-id", "secret-key") }, http)
 
     println(kms.createKey(SYMMETRIC_DEFAULT, keyUsage = ENCRYPT_DECRYPT))
