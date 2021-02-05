@@ -1,5 +1,3 @@
-package extending_http4k_connect
-
 import actions.ExpenseReport
 import model.Expense
 import org.http4k.connect.ChaosFake

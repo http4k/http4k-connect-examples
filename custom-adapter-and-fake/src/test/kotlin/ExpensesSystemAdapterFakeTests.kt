@@ -1,11 +1,8 @@
-package extending_http4k_connect
-
-import ExpensesClient
-import Http
 import actions.ExpenseReport
-import actions.addExpense
-import actions.getMyExpenses
 import adapter.ExpensesSystem
+import adapter.Http
+import adapter.addExpense
+import adapter.getMyExpenses
 import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.equalTo
 import com.natpryce.hamkrest.throws
