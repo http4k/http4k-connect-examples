@@ -25,10 +25,10 @@ fun GitHubApi.Companion.Http(client: HttpHandler) = object : GitHubApi {
 
 // extension function - these give a nicer API
 fun GitHubApi.getUser(username: String) = invoke(GetUser(username))
-fun GitHubApi.getLatestRepoCommit(owner: String, repo: String): Commit = invoke(GetRepoLatestCommit(owner, repo))
+fun GitHubApi.getRepoLatestCommit(owner: String, repo: String): Commit = invoke(GetRepoLatestCommit(owner, repo))
 
 // composite function
 fun GitHubApi.getLatestUser(org: String, repo: String): UserDetails {
-    val commit = getLatestRepoCommit(org, repo)
+    val commit = getRepoLatestCommit(org, repo)
     return getUser(commit.author)
 }
