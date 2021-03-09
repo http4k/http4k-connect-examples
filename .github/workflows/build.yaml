@@ -3,13 +3,14 @@ on:
     branches:
       - '*'
 jobs:
-  build-all-examples:
+  build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: [connect-pattern, custom-adapter-and-fake, using-connect-adapters]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-java@v1
         with:
           java-version: 11
-      - run: pushd connect-pattern && ./gradlew test && popd
-      - run: pushd custom-adapter-and-fake && ./gradlew test && popd
-      - run: pushd using-connect-adapters && ./gradlew test && popd
+      - run: pushd ${{ matrix.project }} && ./gradlew test
