@@ -19,10 +19,10 @@ fun main() {
 
     val kms = KMS.Http(Region.of("us-east-1"), { AwsCredentials("access-key-id", "secret-key") }, fakeKms.debug())
 
-    println(kms.createKey(SYMMETRIC_DEFAULT, keyUsage = ENCRYPT_DECRYPT))
+    println(kms.createKey(SYMMETRIC_DEFAULT, KeyUsage = ENCRYPT_DECRYPT))
 
     // make the KMS blow up!
     fakeKms.misbehave(ReturnStatus(I_M_A_TEAPOT))
 
-    println(kms.createKey(SYMMETRIC_DEFAULT, keyUsage = ENCRYPT_DECRYPT))
+    println(kms.createKey(SYMMETRIC_DEFAULT, KeyUsage = ENCRYPT_DECRYPT))
 }

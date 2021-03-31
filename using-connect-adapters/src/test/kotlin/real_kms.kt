@@ -17,5 +17,5 @@ fun main() {
     val awsCredentials = AwsCredentials("put-your-access-key-id-here", "put-your-secret-key-key-here")
     val kms = KMS.Http(Region.of("us-east-1"), { awsCredentials }, http.debug())
 
-    println(kms.createKey(SYMMETRIC_DEFAULT, keyUsage = ENCRYPT_DECRYPT))
+    println(kms.createKey(SYMMETRIC_DEFAULT, KeyUsage = ENCRYPT_DECRYPT))
 }

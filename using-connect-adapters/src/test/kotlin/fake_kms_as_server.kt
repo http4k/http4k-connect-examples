@@ -1,5 +1,6 @@
 import org.http4k.aws.AwsCredentials
 import org.http4k.chaos.ChaosBehaviours
+import org.http4k.chaos.ChaosBehaviours.ReturnStatus
 import org.http4k.client.JavaHttpClient
 import org.http4k.connect.amazon.kms.FakeKMS
 import org.http4k.connect.amazon.kms.Http
@@ -9,6 +10,7 @@ import org.http4k.connect.amazon.model.CustomerMasterKeySpec.SYMMETRIC_DEFAULT
 import org.http4k.connect.amazon.model.KeyUsage.ENCRYPT_DECRYPT
 import org.http4k.connect.amazon.model.Region
 import org.http4k.core.Status
+import org.http4k.core.Status.Companion.I_M_A_TEAPOT
 import org.http4k.core.Uri
 import org.http4k.core.then
 import org.http4k.filter.ClientFilters.SetBaseUriFrom
@@ -26,12 +28,12 @@ fun main() {
     val http = SetBaseUriFrom(Uri.of("http://localhost:8000")).then(JavaHttpClient())
     val kms = KMS.Http(Region.of("us-east-1"), { AwsCredentials("access-key-id", "secret-key") }, http)
 
-    println(kms.createKey(SYMMETRIC_DEFAULT, keyUsage = ENCRYPT_DECRYPT))
+    println(kms.createKey(SYMMETRIC_DEFAULT, KeyUsage = ENCRYPT_DECRYPT))
 
     // make the KMS blow up!
-    fakeKMS.misbehave(ChaosBehaviours.ReturnStatus(Status.I_M_A_TEAPOT))
+    fakeKMS.misbehave(ReturnStatus(I_M_A_TEAPOT))
 
-    println(kms.createKey(SYMMETRIC_DEFAULT, keyUsage = ENCRYPT_DECRYPT))
+    println(kms.createKey(SYMMETRIC_DEFAULT, KeyUsage = ENCRYPT_DECRYPT))
 
     fakeKmsServer.stop()
 }
