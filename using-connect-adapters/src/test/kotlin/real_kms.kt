@@ -3,9 +3,9 @@ import org.http4k.client.JavaHttpClient
 import org.http4k.connect.amazon.kms.Http
 import org.http4k.connect.amazon.kms.KMS
 import org.http4k.connect.amazon.kms.createKey
-import org.http4k.connect.amazon.model.CustomerMasterKeySpec.SYMMETRIC_DEFAULT
-import org.http4k.connect.amazon.model.KeyUsage.ENCRYPT_DECRYPT
-import org.http4k.connect.amazon.model.Region
+import org.http4k.connect.amazon.kms.model.CustomerMasterKeySpec.SYMMETRIC_DEFAULT
+import org.http4k.connect.amazon.kms.model.KeyUsage.ENCRYPT_DECRYPT
+import org.http4k.connect.amazon.core.model.Region
 import org.http4k.filter.debug
 
 /**

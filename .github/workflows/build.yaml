@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        project: [connect-pattern, custom-adapter-and-fake, using-connect-adapters]
+        project: [connect-pattern, custom-adapter-and-fake, extending-connect-adapters, using-connect-adapters]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-java@v1
