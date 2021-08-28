@@ -1,6 +1,7 @@
 import actions.ExpenseReport
 import model.Expense
-import org.http4k.connect.ChaosFake
+import org.http4k.chaos.ChaoticHttpHandler
+import org.http4k.chaos.start
 import org.http4k.connect.storage.InMemory
 import org.http4k.connect.storage.Storage
 import org.http4k.core.Body
@@ -27,7 +28,7 @@ import java.util.concurrent.atomic.AtomicInteger
 class FakeExpensesSystem(
     storage: Storage<Expense> = Storage.InMemory(),
     counter: AtomicInteger = AtomicInteger()
-) : ChaosFake() {
+) : ChaoticHttpHandler() {
     override val app = routes(
         addExpenseHandler(storage, counter),
         expenseReportHandler(storage)
@@ -35,7 +36,7 @@ class FakeExpensesSystem(
 }
 
 /**
- * If you run this you will see the (static) port which is allocated automatically by http4k-connect
+ * If you run this you will see the (static) port which is allocated automatically by http4k
  * in this case: 58611
  */
 fun main() {
