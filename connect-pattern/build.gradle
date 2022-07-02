@@ -1,7 +1,7 @@
 buildscript {
     repositories {
         mavenCentral()
-        jcenter()
+
     }
 
     dependencies {
@@ -11,7 +11,6 @@ buildscript {
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 apply plugin: 'kotlin'
@@ -21,7 +20,7 @@ test {
 }
 
 dependencies {
-    testImplementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    testImplementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     testImplementation "org.http4k:http4k-core:$http4k_version"
     testImplementation "org.http4k:http4k-client-okhttp:$http4k_version"
@@ -35,8 +34,8 @@ dependencies {
     testImplementation("dev.forkhandles:result4k:1.8.1.0")
 }
 
-compileKotlin.kotlinOptions.jvmTarget = "1.8"
-compileTestKotlin.kotlinOptions.jvmTarget = "1.8"
+compileKotlin.kotlinOptions.jvmTarget = "11"
+compileTestKotlin.kotlinOptions.jvmTarget = "11"
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
