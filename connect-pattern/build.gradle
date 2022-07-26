@@ -31,7 +31,7 @@ dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter-api"
     testImplementation "org.junit.jupiter:junit-jupiter-engine"
     testImplementation "io.mockk:mockk:$mockk_version"
-    testImplementation("dev.forkhandles:result4k:1.8.1.0")
+    testImplementation("dev.forkhandles:result4k:2.2.0.0")
 }
 
 compileKotlin.kotlinOptions.jvmTarget = "11"
