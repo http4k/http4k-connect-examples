@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        project: [connect-pattern, custom-adapter-and-fake, extending-connect-adapters, using-connect-adapters]
+        project: [connect-pattern, custom-adapter-and-fake, extending-connect-adapters, developing-openai-plugins, using-connect-adapters]
     steps:
       - uses: actions/checkout@v3.3.0
       - name: Setup Java
