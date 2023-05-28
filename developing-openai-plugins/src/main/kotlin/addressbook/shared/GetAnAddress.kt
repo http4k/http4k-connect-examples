@@ -1,5 +1,6 @@
 package addressbook.shared
 
+import org.http4k.contract.Tag
 import org.http4k.contract.div
 import org.http4k.contract.meta
 import org.http4k.core.Body
@@ -17,7 +18,8 @@ import org.http4k.lens.value
  * Lookup address for a user
  */
 fun GetAnAddress(userDirectory: UserDirectory) = "address" / Path.value(UserId).of("user") meta {
-    summary = "Lookup my address"
+    summary = "Lookup the address of a user"
+    tags += Tag("General")
     returning(OK, addressLens to "10 Downing Street, London")
 } bindContract GET to { user ->
     {

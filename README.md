@@ -8,3 +8,4 @@ These sample projects are designed to demonstrate how easy it is to use the vari
 - **extending-connect-adapters** : Shows how to extend the library adapters (in this case GitHub) with custom Action classes.
 - **using-connect-adapters** : How to use the library adapters (in this case AWS KMS) and Fake which ship with http4k-connect.
 - **custom-adapter-and-fake** : Implementing your own custom http4k-connect compliant adapter and a Fake HTTP system to connect to, along with examples of testing techniques. Also demonstrates the usage of the Kapt compile-time code-generators in a custom adapter.
+- **developing-openai-plugins** : Using the http4k-connect-openai-plugin SDK to create OpenAI plugins. This example includes the same example using all of the different OpenAI plugin styles, and installs them into the `FakeOpenAI` so you can interact with them in an authorised way through an OpenAPI interface.

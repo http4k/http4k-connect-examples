@@ -1,5 +1,6 @@
 package addressbook.shared
 
+import org.http4k.contract.Tag
 import org.http4k.contract.meta
 import org.http4k.core.Body
 import org.http4k.core.ContentType.Companion.TEXT_PLAIN
@@ -18,7 +19,8 @@ fun GetMyAddress(
     userDirectory: UserDirectory,
     principal: (Request) -> UserId?
 ) = "address" meta {
-    summary = "Lookup my address"
+    summary = "Lookup my address using the logged-in principal"
+    tags += Tag("Personalised")
     returning(OK, addressLens to "10 Downing Street, London")
 } bindContract GET to { req: Request ->
     when (val userDetails = principal(req)?.let { userDirectory.find(it) }) {

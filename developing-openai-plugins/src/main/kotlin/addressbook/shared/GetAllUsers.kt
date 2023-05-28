@@ -1,5 +1,6 @@
 package addressbook.shared
 
+import org.http4k.contract.Tag
 import org.http4k.contract.meta
 import org.http4k.core.Body
 import org.http4k.core.Method.GET
@@ -14,6 +15,7 @@ import org.http4k.format.Moshi.auto
  */
 fun GetAllUsers(userDirectory: UserDirectory) = "users" meta {
     summary = "Lookup all users"
+    tags += Tag("General")
     returning(OK, usersLens to listOf(UserId.of("alice"), UserId.of("bob")))
 } bindContract GET to { _: Request ->
     Response(OK).with(usersLens of userDirectory.all().toList())
