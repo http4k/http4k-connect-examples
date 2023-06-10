@@ -1,6 +1,7 @@
 # Developing OpenAI/ChatGPT plugins
 
-Using the [http4k-connect-openai-plugin SDK](https://github.com/http4k/http4k-connect/tree/master/openai) to create OpenAI plugins. This example includes the same example using all of
+Using the [http4k-connect-openai-plugin SDK](https://github.com/http4k/http4k-connect/tree/master/openai) to create
+OpenAI plugins. This example includes the same example using all of
 the different ChatGPT plugin styles, and installs them into the `FakeOpenAI` so you can interact with them in an
 authorised way through an OpenAPI interface.
 
@@ -22,8 +23,9 @@ data-sources in queries to the AI chat completion engine. Creating a plugin requ
 ## Creating the plugin
 
 The http4k-connect plugin SDK provides a simple API for creating a plugin from scratch, which is exposed as a standard
-http4k `HttpHandler` type, and thus can be run in a variety of ways with no changes, from completely in-memory (for
-tests), to running as a local server, or integrated as a module into a larger http4k application. Here's an example:
+http4k `HttpHandler` type, and thus can be run in a variety of ways with zero changes, from completely in-memory (for
+tests), to running as a local server, deployed as a serverless function, or integrated as a module into a larger http4k
+application. Here's an example:
 
 ```kotlin
 val plugin = openAiPlugin(
