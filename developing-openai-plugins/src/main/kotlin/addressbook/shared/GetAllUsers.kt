@@ -14,7 +14,7 @@ import org.http4k.format.Moshi.auto
  * Lookup address for a user
  */
 fun GetAllUsers(userDirectory: UserDirectory) = "users" meta {
-    summary = "Lookup all users"
+    summary = "Get a simple list of all known users"
     tags += Tag("General")
     returning(OK, usersLens to listOf(UserId.of("alice"), UserId.of("bob")))
 } bindContract GET to { _: Request ->

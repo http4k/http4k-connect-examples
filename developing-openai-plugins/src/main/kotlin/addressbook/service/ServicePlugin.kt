@@ -24,7 +24,8 @@ fun ServicePlugin(env: Environment = ENV): RoutingHttpHandler {
     return openAiPlugin(
         info(
             apiVersion = "1.0",
-            humanDescription = "serviceplugin" to "A plugin which uses service-level auth",
+            humanDescription = "Address book (Service auth)" to "A simple User-auth-secured example addressbook",
+            modelDescription = "Address book (Service auth)" to "A plugin which provides user address details for users",
             pluginUrl = PLUGIN_BASE_URL(env),
             contactEmail = EMAIL(env),
         ),

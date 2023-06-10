@@ -20,7 +20,8 @@ fun NoAuthPlugin(env: Environment = ENV): RoutingHttpHandler {
     return openAiPlugin(
         info(
             apiVersion = "1.0",
-            humanDescription = "noauthplugin" to "A plugin which uses no auth",
+            humanDescription = "Address book (No auth)" to "A simple unsecured example addressbook",
+            modelDescription = "Address book (No auth)" to "A plugin which provides user address details for users",
             pluginUrl = PLUGIN_BASE_URL(env),
             contactEmail = EMAIL(env),
         ),

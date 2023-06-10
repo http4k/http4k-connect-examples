@@ -19,7 +19,7 @@ fun GetMyAddress(
     userDirectory: UserDirectory,
     principal: (Request) -> UserId?
 ) = "address" meta {
-    summary = "Lookup my address using the logged-in principal"
+    summary = "Lookup the address of the logged-in user"
     tags += Tag("Personalised")
     returning(OK, addressLens to "10 Downing Street, London")
 } bindContract GET to { req: Request ->

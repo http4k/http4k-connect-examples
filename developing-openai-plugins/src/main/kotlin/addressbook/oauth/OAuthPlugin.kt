@@ -45,7 +45,8 @@ fun OAuthPlugin(
     return openAiPlugin(
         info(
             apiVersion = "1.0",
-            humanDescription = "oauthplugin" to "A plugin which uses oauth",
+            humanDescription = "Address book (OAuth)" to "A simple OAuth-secured example addressbook",
+            modelDescription = "Address book (OAuth)" to "A plugin which provides user address details for users or the logged in user",
             pluginUrl = PLUGIN_BASE_URL(env),
             contactEmail = EMAIL(env),
         ),

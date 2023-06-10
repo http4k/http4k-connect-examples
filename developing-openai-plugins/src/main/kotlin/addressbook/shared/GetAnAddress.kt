@@ -18,7 +18,7 @@ import org.http4k.lens.value
  * Lookup address for a user
  */
 fun GetAnAddress(userDirectory: UserDirectory) = "address" / Path.value(UserId).of("user") meta {
-    summary = "Lookup the address of a user"
+    summary = "Lookup the address of a user by name"
     tags += Tag("General")
     returning(OK, addressLens to "10 Downing Street, London")
 } bindContract GET to { user ->

@@ -32,7 +32,8 @@ fun UserPlugin(env: Environment = ENV): RoutingHttpHandler {
             openAiPlugin(
                 info(
                     apiVersion = "1.0",
-                    humanDescription = "userplugin" to "A plugin which uses user-level auth",
+                    humanDescription = "Address book (User auth)" to "A simple User-auth-secured example addressbook",
+                    modelDescription = "Address book (User auth)" to "A plugin which provides user address details for users or the logged in user",
                     pluginUrl = PLUGIN_BASE_URL(env),
                     contactEmail = EMAIL(env),
                 ),
