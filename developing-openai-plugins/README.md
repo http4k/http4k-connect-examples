@@ -1,6 +1,6 @@
 # Developing OpenAI/ChatGPT plugins
 
-Using the http4k-connect-openai-plugin SDK to create OpenAI plugins. This example includes the same example using all of
+Using the [http4k-connect-openai-plugin SDK](https://github.com/http4k/http4k-connect/tree/master/openai) to create OpenAI plugins. This example includes the same example using all of
 the different ChatGPT plugin styles, and installs them into the `FakeOpenAI` so you can interact with them in an
 authorised way through an OpenAPI interface.
 
@@ -41,6 +41,8 @@ val plugin = openAiPlugin(
     GetAnAddress(userDirectory),
     GetAllUsers(userDirectory)
 )
+
+plugin.asServer(Jetty(8080)).start()
 ```
 
 ### a. provide the metadata for the API
