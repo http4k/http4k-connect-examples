@@ -21,7 +21,7 @@ fun NoAuthPlugin(env: Environment = ENV): RoutingHttpHandler {
         info(
             apiVersion = "1.0",
             humanDescription = "Address book (No auth)" to "A simple unsecured example addressbook",
-            modelDescription = "Address book (No auth)" to "A plugin which provides user address details for users",
+            modelDescription = "address_book_no_auth" to "A plugin which provides user address details for users",
             pluginUrl = PLUGIN_BASE_URL(env),
             contactEmail = EMAIL(env),
         ),

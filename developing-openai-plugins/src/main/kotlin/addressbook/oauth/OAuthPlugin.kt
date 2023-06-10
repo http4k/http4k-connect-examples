@@ -46,7 +46,7 @@ fun OAuthPlugin(
         info(
             apiVersion = "1.0",
             humanDescription = "Address book (OAuth)" to "A simple OAuth-secured example addressbook",
-            modelDescription = "Address book (OAuth)" to "A plugin which provides user address details for users or the logged in user",
+            modelDescription = "address_book_oauth" to "A plugin which provides user address details for users or the logged in user",
             pluginUrl = PLUGIN_BASE_URL(env),
             contactEmail = EMAIL(env),
         ),

@@ -25,7 +25,7 @@ fun ServicePlugin(env: Environment = ENV): RoutingHttpHandler {
         info(
             apiVersion = "1.0",
             humanDescription = "Address book (Service auth)" to "A simple User-auth-secured example addressbook",
-            modelDescription = "Address book (Service auth)" to "A plugin which provides user address details for users",
+            modelDescription = "address_book_service_auth" to "A plugin which provides user address details for users",
             pluginUrl = PLUGIN_BASE_URL(env),
             contactEmail = EMAIL(env),
         ),
