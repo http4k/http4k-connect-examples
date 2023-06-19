@@ -1,6 +1,6 @@
 import actions.ExpenseReport
-import adapter.addExpense
-import adapter.getMyExpenses
+import actions.addExpense
+import actions.getMyExpenses
 import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.equalTo
 import org.junit.jupiter.api.Test

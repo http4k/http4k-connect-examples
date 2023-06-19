@@ -1,7 +1,7 @@
 import actions.ExpenseReport
 import actions.GetMyExpenses
+import actions.getMyExpenses
 import adapter.ExpensesSystem
-import adapter.getMyExpenses
 import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.equalTo
 import io.mockk.every
