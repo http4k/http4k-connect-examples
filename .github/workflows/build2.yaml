@@ -1,0 +1,15 @@
+on:
+  push:
+    branches:
+      - '*'
+jobs:
+  Label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Tag automerge branch
+        if: ${{ startsWith(github.ref, 'auto/') }}
+        uses: TimonVS/pr-labeler-action@v3
+        with:
+          configuration-path: .github/pr-labeler.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.ORG_PUBLIC_REPO_RELEASE_TRIGGERING }}
