@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        project: [connect-pattern, custom-adapter-and-fake, extending-connect-adapters, developing-openai-plugins, using-connect-adapters]
+        project: [ connect-pattern, custom-adapter-and-fake, extending-connect-adapters, developing-openai-plugins, using-connect-adapters ]
     steps:
       - uses: actions/checkout@v3.3.0
       - name: Setup Java
@@ -19,9 +19,12 @@ jobs:
           distribution: adopt
           java-version: 11
           cache: gradle
-      - run: pushd ${{ matrix.project }} && ./gradlew test
+  merge:
+    needs: [ build ]
+    runs-on: ubuntu-latest
+    steps:
       - name: Tag automerge branch
-        if: ${{ startsWith(env.GITHUB_HEAD_REF, 'auto') && github.event_name == 'pull_request' }}
+        if: ${{ startsWith(env.GITHUB_HEAD_REF, 'auto') }}
         uses: TimonVS/pr-labeler-action@v3
         with:
           configuration-path: .github/pr-labeler.yml
