@@ -25,6 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Tag automerge branch
+        if: ${{ github.event_name == 'pull_request' }}
         uses: TimonVS/pr-labeler-action@v3
         with:
           configuration-path: .github/pr-labeler.yml
