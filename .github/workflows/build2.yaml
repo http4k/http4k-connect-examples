@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Tag automerge branch
-        if: ${{ startsWith(github.head_ref, 'auto') }}
+        if: contains(github.ref, "auto")
         uses: TimonVS/pr-labeler-action@v3
         with:
           configuration-path: .github/pr-labeler.yml
