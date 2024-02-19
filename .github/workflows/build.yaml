@@ -12,9 +12,9 @@ jobs:
       matrix:
         project: [ connect-pattern, custom-adapter-and-fake, extending-connect-adapters, developing-openai-plugins, using-connect-adapters ]
     steps:
-      - uses: actions/checkout@v3.3.0
+      - uses: actions/checkout@v4.1.1
       - name: Setup Java
-        uses: actions/setup-java@v3.9.0
+        uses: actions/setup-java@v4.0.0
         with:
           distribution: adopt
           java-version: 11
