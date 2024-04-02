@@ -12,4 +12,4 @@ jobs:
           reviewers-number: 0
           merge-method: squash
           auto-delete: true
-          github-token: ${{ secrets.ORG_PUBLIC_REPO_RELEASE_TRIGGERING }}
+          github-token: ${{ secrets.TOOLBOX_REPO_TOKEN }}
