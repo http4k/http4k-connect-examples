@@ -2,8 +2,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.util.Properties
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.8.22"
-    id("com.google.devtools.ksp") version "1.8.22-1.0.11"
+    kotlin("jvm") version "1.9.23"
+    id("com.google.devtools.ksp") version "1.9.23-1.0.20"
 }
 buildscript {
     repositories {
@@ -66,5 +66,4 @@ dependencies {
     // these are required for implementing your own fake
     testImplementation("org.http4k:http4k-connect-core-fake")
     testImplementation("org.http4k:http4k-connect-storage-core")
-
 }
