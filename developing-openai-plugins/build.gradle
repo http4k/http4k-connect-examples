@@ -22,10 +22,10 @@ dependencies {
     api("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
     api(platform("org.http4k:http4k-connect-bom:$http4k_connect_version"))
     api("org.http4k:http4k-serverless-lambda")
-    api("org.http4k:http4k-connect-openai-plugin")
+    api("org.http4k:http4k-connect-ai-openai-plugin")
 
     testApi(platform("org.junit:junit-bom:$junit_version"))
-    testApi("org.http4k:http4k-connect-openai-fake")
+    testApi("org.http4k:http4k-connect-ai-openai-fake")
     testApi("org.http4k:http4k-testing-hamkrest")
     testApi("org.junit.jupiter:junit-jupiter-api")
     testApi("org.junit.jupiter:junit-jupiter-engine")
