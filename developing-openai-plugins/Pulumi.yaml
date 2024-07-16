@@ -1,4 +1,0 @@
-name: http4k-openai-plugin
-runtime: nodejs
-description: Plugin example using the http4k-connect OpenAI plugin SDK
-
