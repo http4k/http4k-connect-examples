@@ -1,8 +1,8 @@
-# http4k Examples
+# http4k Connect Examples
 
 ![.github/workflows/build.yaml](https://github.com/http4k/http4k-connect-examples/workflows/.github/workflows/build.yaml/badge.svg)
 
-These sample projects are designed to demonstrate how easy it is to use the various features of [http4k-connect](https://github.com/http4k/http4k-connect) in isolation. They are all entirely self-contained and can be run locally or using the included script to run them in a Docker container.
+These sample projects are designed to demonstrate how easy it is to use the various features of [http4k Connect](https://github.com/http4k/http4k-connect) in isolation. They are all entirely self-contained and can be run locally or using the included script to run them in a Docker container.
 
 - **connect-pattern** : Code accompanying [the post](https://dentondav.id/posts/2021/02/smash-your-adapter-monolith) describing the basic Connect pattern and how it is structured. It only relies on [http4k](https://http4k.org) as a basic implementation platform.
 - **extending-connect-adapters** : Shows how to extend the library adapters (in this case GitHub) with custom Action classes.
