@@ -1,7 +1,7 @@
 import actions.ExpenseReport
 import actions.GetMyExpenses
 import actions.getMyExpenses
-import adapter.ExpensesSystem
+import client.ExpensesSystem
 import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.equalTo
 import io.mockk.every
@@ -21,7 +21,7 @@ class ExpensesSystemAdapterMockTests {
         every { mockExpensesSystem.getMyExpenses("Bob") } returns
             ExpenseReport("Bob", listOf(Expense(1, "Expense 0", 66)))
 
-        assertThat(ExpensesClient(mockExpensesSystem).countExpenses("Bob"), equalTo(1))
+        assertThat(Expenses(mockExpensesSystem).countExpenses("Bob"), equalTo(1))
     }
 
     @Test
@@ -31,6 +31,6 @@ class ExpensesSystemAdapterMockTests {
         every { mockExpensesSystem(any<GetMyExpenses>()) } returns
             ExpenseReport("Bob", listOf(Expense(1, "Expense 0", 66)))
 
-        assertThat(ExpensesClient(mockExpensesSystem).countExpenses("Bob"), equalTo(1))
+        assertThat(Expenses(mockExpensesSystem).countExpenses("Bob"), equalTo(1))
     }
 }

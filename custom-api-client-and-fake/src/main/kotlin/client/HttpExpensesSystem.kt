@@ -1,4 +1,4 @@
-package adapter
+package client
 
 import actions.ExpensesAction
 import org.http4k.client.JavaHttpClient

@@ -4,6 +4,6 @@ import org.http4k.connect.Action
 
 /**
  * This is the interface which will encapsulate all Actions
- * for the adapter.ExpensesSystem
+ * for the client.ExpensesSystem
  */
 interface ExpensesAction<T> : Action<T>

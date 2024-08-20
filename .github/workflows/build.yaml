@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        project: [ connect-pattern, custom-adapter-and-fake, extending-connect-adapters, using-connect-adapters ]
+        project: [ connect-pattern, custom-api-client-and-fake, extending-connect-api-clients, using-connect-api-clients ]
     steps:
       - uses: actions/checkout@v4.1.1
       - name: Setup Java

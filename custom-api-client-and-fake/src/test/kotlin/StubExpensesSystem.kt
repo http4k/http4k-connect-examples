@@ -2,7 +2,7 @@ import actions.AddExpense
 import actions.ExpenseReport
 import actions.ExpensesAction
 import actions.GetMyExpenses
-import adapter.ExpensesSystem
+import client.ExpensesSystem
 import model.Expense
 import org.http4k.connect.storage.InMemory
 import org.http4k.connect.storage.Storage

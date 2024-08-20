@@ -1,8 +1,8 @@
 import actions.ExpenseReport
 import actions.addExpense
 import actions.getMyExpenses
-import adapter.ExpensesSystem
-import adapter.Http
+import client.ExpensesSystem
+import client.Http
 import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.equalTo
 import com.natpryce.hamkrest.throws
@@ -49,12 +49,12 @@ class ExpensesSystemAdapterFakeTests {
         expensesSystem.addExpense("Bob", 123)
         expensesSystem.addExpense("Alice", 456)
         expensesSystem.addExpense("Bob", 789)
-        assertThat(ExpensesClient(expensesSystem).countExpenses("Bob"), equalTo(2))
+        assertThat(Expenses(expensesSystem).countExpenses("Bob"), equalTo(2))
     }
 
     @Test
     fun `can find out what happens when get expenses call fails`() {
         fakeExpensesSystem.misbehave(ReturnStatus(I_M_A_TEAPOT))
-        assertThat({ ExpensesClient(expensesSystem).countExpenses("Bob") }, throws<RuntimeException>())
+        assertThat({ Expenses(expensesSystem).countExpenses("Bob") }, throws<RuntimeException>())
     }
 }

@@ -38,6 +38,6 @@ class ExpensesSystemAdapterStubTests {
         expensesSystem.addExpense("Bob", 123)
         expensesSystem.addExpense("Alice", 456)
         expensesSystem.addExpense("Bob", 789)
-        assertThat(ExpensesClient(expensesSystem).countExpenses("Bob"), equalTo(2))
+        assertThat(Expenses(expensesSystem).countExpenses("Bob"), equalTo(2))
     }
 }
