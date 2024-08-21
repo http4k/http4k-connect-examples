@@ -1,4 +1,4 @@
-i# http4k Connect Examples
+# http4k Connect Examples
 
 ![.github/workflows/build.yaml](https://github.com/http4k/http4k-connect-examples/workflows/.github/workflows/build.yaml/badge.svg)
 
