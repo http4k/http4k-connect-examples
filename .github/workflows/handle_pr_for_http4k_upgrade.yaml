@@ -11,5 +11,5 @@ jobs:
           label-name: automerge
           reviewers-number: 0
           merge-method: squash
-          auto-delete: true
+          auto-delete: false
           github-token: ${{ secrets.TOOLBOX_REPO_TOKEN }}
